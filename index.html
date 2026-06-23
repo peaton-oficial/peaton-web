@@ -299,6 +299,47 @@ footer{
     margin:12px 0;
     text-align:center;
 }
+
+    .concert-card{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:35px;
+    align-items:center;
+    margin-top:30px;
+}
+
+.concert-flyer{
+    width:100%;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.25);
+}
+
+.concert-info h3{
+    font-size:34px;
+    margin-bottom:20px;
+    color:#ffb900;
+}
+
+.map-link{
+    display:inline-block;
+    margin-top:20px;
+    color:#000;
+    background:#ffb900;
+    padding:12px 20px;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:999px;
+}
+
+@media(max-width:768px){
+    .concert-card{
+        grid-template-columns:1fr;
+    }
+
+    .concert-info h3{
+        font-size:28px;
+    }
+}
     
 @media(max-width:768px){
 
@@ -489,6 +530,36 @@ footer{
     </div>
 </section>
 
+    <section class="section" id="conciertos">
+    <div class="section-grid">
+        <div>
+            <h2>Próximos conciertos</h2>
+
+            <div class="concert-card">
+                <img src="omg-wtf-11-julio.jpg" alt="Flyer OMG WTF" class="concert-flyer">
+
+                <div class="concert-info">
+                    <h3>OMG WTF!</h3>
+
+                    <p>
+                        <strong>Sábado 11 de julio</strong><br>
+                        8:00 PM<br>
+                        El Wecco<br>
+                        Av. Parra 207
+                    </p>
+
+                    <p>
+                        Heyoka · Peaton · Baião · Gohan se mete al mar · Allanamiento Emocional
+                    </p>
+
+                    <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=El%20Wecco%20Av.%20Parra%20207%20Arequipa" target="_blank">
+                        Ver ubicación
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     
 
 <section class="section" id="contacto">
