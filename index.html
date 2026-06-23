@@ -167,11 +167,20 @@ body::after{
 }
 .video-box{
     margin-top:30px;
-    border-radius:16px;
+    max-width:760px;
+    border-radius:18px;
     overflow:hidden;
-    background:rgba(0,0,0,.55);
-    border:1px solid rgba(255,255,255,.18);
-    padding:16px;
+    background:rgba(0,0,0,.35);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+
+.video-box iframe{
+    display:block;
+    width:100%;
+    aspect-ratio:16/9;
+    height:auto;
+    filter:grayscale(100%) contrast(1.05) brightness(.85);
 }
 
 .youtube-link{
