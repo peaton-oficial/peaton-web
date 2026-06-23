@@ -95,9 +95,19 @@ body::after{
 }
 
 .section-grid{
-    display:grid;
-    grid-template-columns:80px 1fr;
-    gap:35px;
+    display:block;
+    width:100%;
+    max-width:760px;
+}
+
+    .section-grid > div{
+    width:100%;
+}
+
+.section-grid p{
+    max-width:760px;
+    width:100%;
+    white-space:normal;
 }
 
 .number{
