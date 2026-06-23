@@ -3,115 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Peaton</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 
 body{
-    background:#000000;
-    color:#ffffff;
-    font-family: Arial, Helvetica, sans-serif;
+    background:#000;
+    color:#fff;
+    font-family: "Courier New", monospace;
 }
 
-.hero{
-    min-height:100vh;
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
     background:
-    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.78)),
-    url("portada.png");
+        linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.75)),
+        url("portada.png");
     background-size:cover;
     background-position:center;
-    background-attachment:fixed;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:40px 20px;
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.25);
+    z-index:-1;
 }
 
 .menu{
-    position:absolute;
-    top:30px;
-    right:40px;
+    position:fixed;
+    top:35px;
+    right:55px;
+    z-index:10;
 }
 
 .menu a{
-    color:#ffffff;
+    color:#fff;
     text-decoration:none;
-    margin-left:25px;
-    font-size:14px;
-    letter-spacing:2px;
+    margin-left:28px;
+    font-size:13px;
+    letter-spacing:3px;
     text-transform:uppercase;
 }
 
-.menu a:hover{
-    color:#ffb900;
+.menu a:hover{color:#ffb900;}
+
+.hero{
+    min-height:100vh;
+    padding:45px 8vw;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 }
 
 .logo{
-    width:min(88vw,850px);
-    height:auto;
-    margin-bottom:32px;
+    position:fixed;
+    top:35px;
+    left:45px;
+    width:220px;
+    z-index:10;
 }
 
-.links{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:14px;
+.hero-title{
+    max-width:900px;
+    font-size:clamp(42px, 7vw, 95px);
+    line-height:1.15;
+    letter-spacing:8px;
+    text-transform:uppercase;
+    font-weight:300;
 }
 
-.links a{
-    color:#ffffff;
-    text-decoration:none;
-    border:1px solid rgba(255,255,255,.35);
-    padding:14px 24px;
-    border-radius:999px;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    background:rgba(0,0,0,.35);
-    backdrop-filter:blur(6px);
-    transition:.25s;
-    font-weight:700;
-    letter-spacing:1px;
-}
-
-.links a:hover{
-    background:#ffb900;
-    color:#000000;
-    border-color:#ffb900;
+.hero-title span{
+    color:#ffb900;
 }
 
 .section{
-    max-width:1000px;
-    margin:auto;
-    padding:100px 25px;
+    max-width:950px;
+    margin:0 auto;
+    padding:90px 25px;
+    border-top:1px solid rgba(255,255,255,.25);
+}
+
+.section-grid{
+    display:grid;
+    grid-template-columns:80px 1fr;
+    gap:35px;
+}
+
+.number{
+    color:#ffb900;
+    font-size:26px;
+    letter-spacing:3px;
 }
 
 .section h2{
-    font-size:42px;
-    margin-bottom:30px;
-    color:#ffffff;
+    font-size:clamp(30px, 4vw, 48px);
+    letter-spacing:8px;
+    text-transform:uppercase;
+    font-weight:300;
+    margin-bottom:25px;
 }
 
 .section h2::after{
     content:"";
     display:block;
-    width:80px;
-    height:4px;
+    width:70px;
+    height:3px;
     background:#ffb900;
     margin-top:14px;
 }
@@ -119,63 +123,99 @@ body{
 .section p{
     font-size:18px;
     line-height:1.8;
-    opacity:.9;
+    max-width:760px;
 }
 
-.music-box{
-    margin-top:40px;
-    padding:18px;
-    border:1px solid rgba(255,255,255,.15);
-    background:linear-gradient(145deg, rgba(255,255,255,.08), rgba(0,0,0,.65));
-    border-radius:18px;
+.spotify-box,
+.video-box{
+    margin-top:30px;
+    border-radius:16px;
+    overflow:hidden;
+    background:rgba(0,0,0,.55);
+    border:1px solid rgba(255,255,255,.18);
+    padding:16px;
+}
+
+.youtube-link{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    margin-top:22px;
+    color:#000;
+    background:#ffb900;
+    padding:15px 24px;
+    text-decoration:none;
+    font-weight:bold;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.youtube-link:hover{
+    background:#fff;
 }
 
 .contact-link{
     color:#ffb900;
     text-decoration:none;
     font-size:24px;
-    font-weight:700;
+    font-weight:bold;
 }
 
-.contact-link:hover{
-    color:#ffffff;
+.social-footer{
+    display:flex;
+    justify-content:center;
+    gap:28px;
+    margin-top:45px;
+}
+
+.social-footer a{
+    color:#fff;
+    font-size:22px;
+}
+
+.social-footer a:hover{
+    color:#ffb900;
 }
 
 footer{
     text-align:center;
     padding:50px 20px;
-    opacity:.6;
+    font-size:13px;
+    letter-spacing:3px;
+    opacity:.7;
 }
 
 @media(max-width:768px){
+    .logo{
+        width:150px;
+        top:25px;
+        left:22px;
+    }
+
     .menu{
-        position:absolute;
-        top:22px;
-        right:0;
-        left:0;
+        position:static;
         text-align:center;
+        padding-top:100px;
     }
 
     .menu a{
-        margin:0 8px;
-        font-size:12px;
+        display:inline-block;
+        margin:8px;
+        font-size:11px;
     }
 
-    .logo{
-        width:min(92vw,700px);
-        margin-bottom:28px;
+    .hero{
+        padding:30px 25px;
+        min-height:90vh;
     }
 
-    .section{
-        padding:75px 22px;
+    .hero-title{
+        letter-spacing:4px;
     }
 
-    .section h2{
-        font-size:32px;
-    }
-
-    .contact-link{
-        font-size:19px;
+    .section-grid{
+        grid-template-columns:1fr;
+        gap:10px;
     }
 }
 </style>
@@ -183,71 +223,91 @@ footer{
 
 <body>
 
-<section class="hero">
+<img src="LOGOBLANTRANSPARENTE.png" alt="Peaton" class="logo">
 
 <nav class="menu">
-    <a href="#sobre">Sobre</a>
-    <a href="#musica">Musica</a>
+    <a href="#inicio">Inicio</a>
+    <a href="#acerca">Acerca de Peaton</a>
+    <a href="#musica">Explora mi musica</a>
+    <a href="#sesion">Sesion en vivo</a>
     <a href="#contacto">Contacto</a>
 </nav>
 
-<img src="LOGOBLANTRANSPARENTE.png" alt="Peaton" class="logo">
-
-<div class="links">
-    <a href="https://open.spotify.com/intl-es/artist/5wCnwICfz1G8yIcCwIAzLd?si=UTqGV539R5KnRdo-3IZC5w" target="_blank">
-        <i class="fa-brands fa-spotify"></i> Spotify
-    </a>
-
-    <a href="https://www.youtube.com/channel/UCSzZDLWp3fVo-8JgkBtrsYQ" target="_blank">
-        <i class="fa-brands fa-youtube"></i> YouTube
-    </a>
-
-    <a href="https://www.instagram.com/peaton_oficial/" target="_blank">
-        <i class="fa-brands fa-instagram"></i> Instagram
-    </a>
-
-    <a href="https://www.facebook.com/peatonoficial/?locale=es_LA" target="_blank">
-        <i class="fa-brands fa-facebook-f"></i> Facebook
-    </a>
-</div>
-
+<section class="hero" id="inicio">
+    <h1 class="hero-title">
+        Chill Pop<br>
+        sumergido en nostalgia y añoranza<br>
+        de tiempos mejores<span>.</span>
+    </h1>
 </section>
 
-<section class="section" id="sobre">
-    <h2>Sobre Peaton</h2>
-
-    <p>
-        Peaton es el proyecto musical de Pablo Pantigozo, musico y productor arequipeño.
-        A traves de canciones que combinan sensibilidad melodica, guitarras,
-        sintetizadores y exploracion sonora, el proyecto ha transitado por distintas
-        etapas manteniendo una identidad propia dentro de la escena independiente peruana.
-    </p>
+<section class="section" id="acerca">
+    <div class="section-grid">
+        <div class="number">01</div>
+        <div>
+            <h2>Acerca de Peaton</h2>
+            <p>
+                Es el proyecto de Pablo Pantigozo en el que explora sonoridades
+                dream pop plasmandolas en baladas indie y canciones soft dance
+                con toques de psicodelia y espacialidad.
+            </p>
+        </div>
+    </div>
 </section>
 
 <section class="section" id="musica">
-    <h2>Escucha</h2>
+    <div class="section-grid">
+        <div class="number">02</div>
+        <div>
+            <h2>Explora mi musica</h2>
 
-    <div class="music-box">
-        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/5wCnwICfz1G8yIcCwIAzLd?utm_source=generator&si=befb18a4a8a048bc" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <div class="spotify-box">
+                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/5wCnwICfz1G8yIcCwIAzLd?utm_source=generator&si=befb18a4a8a048bc" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="sesion">
+    <div class="section-grid">
+        <div class="number">03</div>
+        <div>
+            <h2>Sesion en vivo</h2>
+            <p>
+                Mira una seleccion de sesiones en vivo de Peaton.
+            </p>
+
+            <a class="youtube-link" href="https://www.youtube.com/watch?v=B6xgoZ1faks&list=PLnlj6gT2fYJOkrCNJS3rBRlYogkzSR6xC" target="_blank">
+                <i class="fa-brands fa-youtube"></i>
+                Ver playlist
+            </a>
+        </div>
     </div>
 </section>
 
 <section class="section" id="contacto">
-    <h2>Contacto</h2>
+    <div class="section-grid">
+        <div class="number">04</div>
+        <div>
+            <h2>Contacto</h2>
+            <p>Para conciertos, festivales, colaboraciones o consultas:</p>
+            <br>
+            <a class="contact-link" href="mailto:peaton.oficial@gmail.com">
+                peaton.oficial@gmail.com
+            </a>
 
-    <p>
-        Para conciertos, festivales, colaboraciones o consultas:
-    </p>
-
-    <br>
-
-    <a class="contact-link" href="mailto:peaton.oficial@gmail.com">
-        peaton.oficial@gmail.com
-    </a>
+            <div class="social-footer">
+                <a href="https://open.spotify.com/intl-es/artist/5wCnwICfz1G8yIcCwIAzLd?si=UTqGV539R5KnRdo-3IZC5w" target="_blank"><i class="fa-brands fa-spotify"></i></a>
+                <a href="https://www.youtube.com/channel/UCSzZDLWp3fVo-8JgkBtrsYQ" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.instagram.com/peaton_oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/peatonoficial/?locale=es_LA" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </div>
 </section>
 
 <footer>
-    © 2026 Peaton
+    © 2026 PEATON
 </footer>
 
 </body>
