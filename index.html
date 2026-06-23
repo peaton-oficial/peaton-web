@@ -212,41 +212,96 @@ footer{
     opacity:.7;
 }
 
+    #menu-toggle{
+    display:none;
+}
+
+.hamburger{
+    display:none;
+}
+
 @media(max-width:768px){
 
-    body::before{
-    background-attachment:scroll;
-    background-size:cover;
-    background-position:center top;
-}
-    
     .logo{
-        width:160px;
-        top:10px;
-        left:15px;
+        position:absolute;
+        width:150px;
+        top:25px;
+        left:22px;
+    }
+
+    .hamburger{
+        display:block;
+        position:absolute;
+        top:28px;
+        right:25px;
+        z-index:20;
+        font-size:28px;
+        color:#fff;
     }
 
     .menu{
+        display:none;
         position:absolute;
-        top:80px;
-        left:0;
-        right:0;
+        top:75px;
+        right:20px;
+        left:20px;
+        z-index:19;
+        background:rgba(0,0,0,.85);
+        border:1px solid rgba(255,255,255,.25);
+        padding:22px;
         text-align:center;
+    }
+
+    #menu-toggle:checked ~ .menu{
+        display:block;
     }
 
     .menu a{
         display:block;
-        margin:10px 0;
-        font-size:14px;
+        margin:16px 0;
+        font-size:16px;
+        font-weight:900;
+        letter-spacing:2px;
+    }
+
+    .hero{
+        min-height:100vh;
+        padding:170px 28px 70px;
+        justify-content:flex-start;
     }
 
     .hero-title{
-        font-size:28px;
-        line-height:1.4;
+        font-size:24px;
+        line-height:1.45;
         letter-spacing:2px;
         white-space:normal;
-        max-width:90%;
+        max-width:95%;
+        margin-top:70px;
     }
+
+    body::before{
+        background-attachment:scroll;
+        background-size:cover;
+        background-position:center top;
+    }
+
+    .section{
+        padding:70px 25px;
+    }
+
+    .section h2{
+        font-size:28px;
+        letter-spacing:4px;
+    }
+
+    .section p{
+        font-size:16px;
+    }
+
+    iframe{
+        height:300px;
+    }
+}
 
 }
 
@@ -263,6 +318,12 @@ footer{
 <a href="#inicio">
     <img src="LOGOBLANTRANSPARENTE.png" alt="Peaton" class="logo">
 </a>
+
+<input type="checkbox" id="menu-toggle">
+
+<label for="menu-toggle" class="hamburger">
+    <i class="fa-solid fa-bars"></i>
+</label>
 
 <nav class="menu">
     <a href="#inicio">Inicio</a>
