@@ -6,6 +6,8 @@
 
 <title>Peaton</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  
 <style>
 
 @font-face {
@@ -35,16 +37,15 @@ body{
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:40px 20px;
-    gap:24px;
+    padding:20px;
+    gap:10px;
 }
 
 .logo {
-    width: min(78vw, 720px);
+    width: min(70vw, 650px);
     height: auto;
     margin-bottom: 10px;
 }
-
 .subtitle{
     font-size:1.15rem;
     opacity:0.85;
@@ -60,12 +61,19 @@ body{
 }
 
 .links a{
+    font-family: "Bernier";
+    font-size: 28px;
+    letter-spacing: 2px;
     color:white;
     text-decoration:none;
-    border:1px solid rgba(255,255,255,.3);
-    padding:12px 24px;
-    border-radius:999px;
-    transition:.25s;
+    border:1px solid rgba(255,255,255,.4);
+    padding:18px 30px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background:rgba(255,255,255,.03);
+    transition:0.3s;
 }
 
 .links a:hover{
@@ -120,13 +128,27 @@ footer{
    
 
  <div class="links">
-    <a href="https://open.spotify.com/intl-es/artist/5wCnwICfz1G8yIcCwIAzLd?si=UTqGV539R5KnRdo-3IZC5w" target="_blank">Spotify</a>
 
-    <a href="https://www.youtube.com/channel/UCSzZDLWp3fVo-8JgkBtrsYQ" target="_blank">YouTube</a>
+    <a href="https://open.spotify.com/intl-es/artist/5wCnwICfz1G8yIcCwIAzLd?si=UTqGV539R5KnRdo-3IZC5w" target="_blank">
+        <i class="fa-brands fa-spotify"></i>
+        SPOTIFY
+    </a>
 
-    <a href="https://www.instagram.com/peaton_oficial/" target="_blank">Instagram</a>
+    <a href="https://www.youtube.com/channel/UCSzZDLWp3fVo-8JgkBtrsYQ" target="_blank">
+        <i class="fa-brands fa-youtube"></i>
+        YOUTUBE
+    </a>
 
-    <a href="https://www.facebook.com/peatonoficial/?locale=es_LA" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com/peaton_oficial/" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+        INSTAGRAM
+    </a>
+
+    <a href="https://www.facebook.com/peatonoficial/?locale=es_LA" target="_blank">
+        <i class="fa-brands fa-facebook-f"></i>
+        FACEBOOK
+    </a>
+
 </div>
 
 </section>
