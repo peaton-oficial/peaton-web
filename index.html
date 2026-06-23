@@ -279,7 +279,27 @@ footer{
 #menu-toggle:checked ~ .menu{
     display:block;
 }
+    
+.scrolled #menu-toggle:checked ~ .menu{
+    display:flex;
+    flex-direction:column;
+    position:fixed;
+    top:85px;
+    right:25px;
+    width:280px;
+    padding:22px;
+    background:rgba(0,0,0,.88);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:16px;
+    z-index:19;
+}
 
+.scrolled #menu-toggle:checked ~ .menu a{
+    display:block;
+    margin:12px 0;
+    text-align:center;
+}
+    
 @media(max-width:768px){
 
     .logo{
