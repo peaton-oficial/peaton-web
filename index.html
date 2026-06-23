@@ -55,7 +55,14 @@ body::after{
     text-transform:uppercase;
 }
 
-.menu a:hover{color:#ffb900;}
+.menu a{
+    transition:0.25s;
+}
+
+.menu a:hover{
+    color:#ffb900;
+    text-shadow:0 0 10px rgba(255,185,0,.5);
+}
 
 .hero{
     min-height:100vh;
@@ -67,9 +74,9 @@ body::after{
 
 .logo{
     position:fixed;
-    top:35px;
-    left:45px;
-    width:220px;
+    top:18px;
+    left:25px;
+    width:280px;
     z-index:10;
 }
 
@@ -213,10 +220,14 @@ footer{
     }
 
     .menu a{
-        display:inline-block;
-        margin:8px;
-        font-size:11px;
-    }
+    color:#fff;
+    text-decoration:none;
+    margin-left:30px;
+    font-size:16px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
 
     .hero{
         padding:30px 25px;
@@ -250,8 +261,9 @@ footer{
 </nav>
 
 <section class="hero" id="inicio">
-   <h1 class="hero-title">
-    "Chill Pop sumergido en nostalgia y añoranza de tiempos mejores"<span>.</span>
+  <h1 class="hero-title">
+    Chill Pop sumergido en nostalgia<br>
+    y añoranza de tiempos mejores<span>.</span>
 </h1>
 </section>
 
