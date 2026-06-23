@@ -71,8 +71,11 @@ body::after{
 
 .hero{
     min-height:100vh;
-    padding:170px 25px 60px;
-    justify-content:flex-start;
+    padding:120px 80px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    align-items:flex-start;
 }
 
 .logo{
@@ -89,11 +92,12 @@ body::after{
 }
 
 .hero-title{
-    font-size:24px;
-    line-height:1.45;
+    max-width:700px;
+    font-size:clamp(32px, 2.5vw, 48px);
+    line-height:1.4;
     letter-spacing:2px;
-    white-space:normal;
-    max-width:90%;
+    font-weight:700;
+    margin-bottom:120px;
 }
 
 .hero-title span{
@@ -265,19 +269,19 @@ footer{
     }
 
     .hero{
-        min-height:100vh;
-        padding:170px 28px 70px;
-        justify-content:flex-start;
-    }
+    min-height:100vh;
+    padding:180px 30px 80px;
+    justify-content:flex-end;
+    align-items:flex-start;
+}
 
-    .hero-title{
-        font-size:24px;
-        line-height:1.45;
-        letter-spacing:2px;
-        white-space:normal;
-        max-width:95%;
-        margin-top:70px;
-    }
+.hero-title{
+    font-size:28px;
+    line-height:1.35;
+    letter-spacing:1px;
+    max-width:100%;
+    margin-bottom:40px;
+}
 
     body::before{
         background-attachment:scroll;
