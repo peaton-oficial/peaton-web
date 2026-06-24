@@ -602,10 +602,16 @@ window.addEventListener("scroll", function(){
 </script>
     
 <script>
+const menuToggle = document.getElementById('menu-toggle');
+
 document.querySelectorAll('.menu a').forEach(link => {
   link.addEventListener('click', () => {
-    document.getElementById('menu-toggle').checked = false;
+    menuToggle.checked = false;
   });
+});
+
+window.addEventListener('scroll', () => {
+  menuToggle.checked = false;
 });
 </script>
     
