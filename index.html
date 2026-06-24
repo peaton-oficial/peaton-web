@@ -92,13 +92,14 @@ body::after{
 }
 
 .hero-title{
-    max-width:700px;
-    font-size:clamp(32px, 2.5vw, 48px);
+    max-width:600px;
+    margin-left:280px;
+    margin-top:120px;
+    font-size:3rem;
     line-height:1.4;
-    letter-spacing:2px;
     font-weight:700;
-    margin-bottom:120px;
-    margin-left:100px;
+    position:relative;
+    z-index:2;
 }
 
 .hero-title span{
@@ -116,7 +117,7 @@ body::after{
     display:block;
     width:100%;
     max-width:760px;
-    margin-left:220px;
+    margin-left:280px;
 }
 
     .section-grid > div{
@@ -345,12 +346,13 @@ footer{
     
 @media(max-width:768px){
 
-    .logo{
-        position:absolute;
-        width:150px;
-        top:25px;
-        left:22px;
-    }
+   .logo{
+    position:fixed;
+    top:40px;
+    left:30px;
+    width:220px;
+    z-index:1000;
+}
 
     .hamburger{
     display:flex;
@@ -408,7 +410,9 @@ footer{
     font-size:28px;
     line-height:1.35;
     letter-spacing:1px;
-    max-width:100%;
+    max-width:85%;
+    margin-left:40px;
+    margin-top:0;
     margin-bottom:40px;
 }
 
@@ -438,9 +442,9 @@ footer{
 
 }
 
-    .section-grid{
-    display:block;
-    width:100%;
+   .section-grid{
+    margin-left:40px;
+    max-width:85%;
 }
 }
 </style>
@@ -476,7 +480,8 @@ footer{
 <section class="hero" id="inicio">
   <h1 class="hero-title">
     Canciones para caminar<br>
-    sin saber exactamente adónde<span>.</span>
+    sin saber exactamente<br>
+    adónde<span class="yellow-dot">.</span>
 </h1>
 </section>
 
