@@ -244,18 +244,13 @@ footer{
 }
 
 .hamburger{
-    .icon-close{
     display:none;
 }
 
-#menu-toggle:checked + .hamburger .icon-open{
+    #menu-toggle{
     display:none;
 }
 
-#menu-toggle:checked + .hamburger .icon-close{
-    display:block;
-}
-    
 .hamburger{
     display:none;
     align-items:center;
@@ -460,8 +455,7 @@ footer{
 <input type="checkbox" id="menu-toggle">
 
 <label for="menu-toggle" class="hamburger">
-    <i class="fa-solid fa-bars icon-open"></i>
-    <i class="fa-solid fa-xmark icon-close"></i>
+    <i class="fa-solid fa-bars"></i>
 </label>
 
     <input type="checkbox" id="menu-toggle">
